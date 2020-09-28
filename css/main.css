@@ -1,0 +1,77 @@
+/* HTML-STRUCTURE
+--> nav     .top-nav
+    section .banner .stay-home
+    section .headline
+    section .banner .tnw-2020
+    section .latest-news
+    section .index-co
+    section .categories
+    section .latest-deals
+    footer
+*/
+
+/* MAIN */
+
+body {
+  box-sizing: border-box;
+  font-family: Maquette,Helvetica Neue,Arial,sans-serif;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TOP-NAV */
+
+.top-nav {
+  background-color: rgb(255, 255, 214);
+}
+
+/* BANNER STAY-HOME */
+
+.stay-home {
+  background-color: rgb(255, 224, 255);
+}
+
+/* HEADLINE */
+
+.headline {
+  background-color: rgb(211, 211, 255);
+}
+
+/* BANNER TNW-2020 */
+
+.tnw-2020 {
+  background-color: rgb(255, 237, 203);
+}
+
+/* LATEST-NEWS */
+
+.latest-news {
+  background-color: rgb(217, 255, 217);
+}
+
+/* INDEX-CO */
+
+.index-co {
+  background-color: rgb(255, 208, 208);
+}
+
+/* CATEGORIES */
+
+.categories {
+  background-color: rgb(231, 255, 206);
+}
+
+/* LATEST-DEALS */
+
+.latest-deals {
+  background-color: rgb(255, 204, 204);
+}
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(231, 205, 255);
+}
