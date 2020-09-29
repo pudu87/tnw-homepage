@@ -1,7 +1,7 @@
 /* HTML-STRUCTURE
 --> nav     .top-nav
     section .banner .stay-home
-    section .headline
+    section .cover
     section .banner .tnw-2020
     section .latest-news
     section .index-co
@@ -13,37 +13,143 @@
 /* MAIN */
 
 body {
+  background-color: rgb(228, 255, 246);
   box-sizing: border-box;
   font-family: Maquette,Helvetica Neue,Arial,sans-serif;
   font-size: 14px;
+  color: #555;
+}
+h1 {
+  font-size: 18px;
+  font-weight: bold;
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+.wrapper {
+  max-width: 1192px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: aliceblue;
 }
 
 /* TOP-NAV */
 
 .top-nav {
   background-color: rgb(255, 255, 214);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 110px;
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  grid-template-rows: 48px;
 }
-
-/* BANNER STAY-HOME */
-
+.top-nav img {
+  height: 20px;
+}
+.nav-1 li,
+.nav-2 li {
+  display: inline;
+}
+.nav-1 {
+  background-color: rgb(255, 238, 217);
+}
+.nav-1 > li:nth-last-child(4) {
+  margin-left: auto;
+}
 .stay-home {
-  background-color: rgb(255, 224, 255);
+  grid-column: 1 / -1;
+  text-align: center;
+  background-color: #fd3;
+  color: #000;
+}
+.nav-1,
+.nav-2 .nav-2-menu,
+.nav-2 .countdown {
+  display: none;
 }
 
-/* HEADLINE */
+/*
+<nav class="top-nav">
+  <a class="logo" href="link.html">
+    <span>TNW</span>
+  </a>
 
-.headline {
+  <div class="nav-1">
+    <ul>
+      <li><a href="link.html">News</a></li>
+      <li><a href="link.html">Events &#9662;</a></li>
+      <li><a href="link.html">Business &#9662;</a></li>
+      <li><a href="link.html">AMAs</a></li>
+      <li><a href="link.html">Spaces</a></li>
+      <li><a href="link.html">Terms & Conditions</a></li>
+      <li><a href="link.html">About</a></li>
+      <li><a href="link.html">Advertise</a></li>
+      <li><a href="link.html">Jobs</a></li>
+      <li><a href="link.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-2">
+    <ul>
+      <li><a href="link.html">Latest</a></li>
+      <li><a href="link.html">Hard Fork</a></li>
+      <li><a href="link.html">Plugged</a></li>
+      <li><a href="link.html">Readme</a></li>
+      <li><a href="link.html">Growth Quarters</a></li>
+    <ul>
+    <a href="link.html"><img src="/images/search-icon.png" alt="search-icon"></a>
+    <a href="link.html"><img src="/images/hamburger-button.png" alt="hamburger-button"></a>
+    <ul class="tnw-2020-countdown">
+      <li>logo</li>
+      <li>countdown</li>
+      <li>get tickets</li>
+    </ul>
+  </div>
+
+  <div class="banner stay-home">
+    Stay home. Go global. Build your network at TNW2020 Online &#8594;
+  </div>
+</nav>
+
+/* cover */
+
+.cover {
   background-color: rgb(211, 211, 255);
+  margin: 8px;
+  padding-top: 104px;
+  display: grid;
+  grid-auto-rows: 217px;
+  grid-gap: 8px;
 }
+.cover > article {
+  background-color: white;
+}
+
+/*
+<section class="cover">
+  <article>
+    a cover article
+  </article>
+
+  <article>
+    a cover article
+  </article>
+
+  <article>
+    a cover article
+  </article>
+</section>
 
 /* BANNER TNW-2020 */
 
 .tnw-2020 {
   background-color: rgb(255, 237, 203);
+  height: 90px;
+  max-width: 728px;
+  margin: 0 auto;
 }
 
 /* LATEST-NEWS */
@@ -51,27 +157,258 @@ a {
 .latest-news {
   background-color: rgb(217, 255, 217);
 }
+.latest-news ul {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-rows: 75px;
+}
+.latest-news li {
+  background-color: #fff;
+  display: grid;
+  grid-gap: 16px;
+}
+
+/*
+ <section class="latest-news">
+  <h1>Latest news &#8250;</h1>
+
+  <ul>
+    <li>article content</li><!--8 times-->
+    <li>article content</li>
+    <li>article content</li>
+    <li>article content</li>
+    <li>article content</li>
+  </ul>
+</section>
 
 /* INDEX-CO */
 
 .index-co {
   background-color: rgb(255, 208, 208);
 }
+.index-co > ul {
+  display: grid;
+  grid-gap: 16px;
+}
+.index-co .article {
+  background-color: #fff;
+}
+.index-co .article:last-child {
+  display: none;
+}
+
+
+/*
+<section class="index-co">
+  <header>
+    <h1>Latest funding rounds on Index.co &#8250;</h1>
+    <ul>
+      <li><a href="link.html">See more</a></li>
+      <li><a href="link.html">Get updates by email</a></li>
+      <li><a href="link.html">Add Info</a></li>
+    </ul>
+  </header>
+
+  <ul>
+    <li>article content</li><!--3/4 times-->
+    <li>article content</li>
+    <li>article content</li>
+    <li>article content</li>
+  </ul>
+</section>
 
 /* CATEGORIES */
 
 .categories {
   background-color: rgb(231, 255, 206);
+  display: grid;
+  grid-gap: 16px;
 }
+.categories > section {
+  background-color: #fff;
+}
+
+/*
+<div class="categories">
+  <section class="hard-fork"><!--9 times-->
+    <h1>Hard Fork &#8250;</h1>
+    <article>
+      article content
+    </article>
+    <div class="latest">
+      some article
+    </div>
+    <ul>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+    </ul>
+  </section>
+
+  <section class="apps">
+    <h1>Apps &#8250;</h1>
+    <article>
+      article content
+    </article>
+    <div class="latest">
+      some article
+    </div>
+    <ul>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+      <li><a href="link.html">other article</a></li>
+    </ul>
+  </section>
+</div>
 
 /* LATEST-DEALS */
 
 .latest-deals {
   background-color: rgb(255, 204, 204);
 }
+.latest-deals header {
+  display: flex;
+  justify-content: space-between;
+}
+.latest-deals > ul {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-rows: 75px;
+}
+.latest-deals .article {
+  background-color: #fff;
+}
+/*
+<section class="latest-deals">
+  <header>
+    <h1>Latest deals &#8250;</h1>
+    <div>See all deals</div>
+  </header>
+
+  <ul>
+    <li class="article">some article</li><!--8 times-->
+    <li class="article">some article</li>
+    <li class="article">some article</li>
+    <li class="article">some article</li>
+    <li class="article">some article</li>
+  </ul>
+</section>
 
 /* FOOTER */
 
 footer {
   background-color: rgb(231, 205, 255);
+}
+
+
+/* MEDIA-QUERIES */
+
+@media screen and (min-width: 750px) {
+
+  /*TOP-NAV*/
+  .top-nav {
+    grid-template-rows: 32px 48px;
+  }
+  .top-nav .logo {
+    grid-row: span 2;
+  }
+  .top-nav .nav-1 {
+    display: flex;
+  }
+  .top-nav .nav-2-menu {
+    display: block;
+  }
+  .top-nav .hamburger {
+    display: none;
+  }
+
+  /*COVER*/
+  .cover {
+    grid-template: 280px 280px / 2fr 1fr;
+  }
+  .cover > article:first-child {
+    grid-row: span 2;
+  }
+
+  /*LATEST-NEWS*/
+  .latest-news ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  /*INDEX-CO*/
+  .index-co > header li {
+    display: inline;
+  }
+  .index-co > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*CATEGORIES*/
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*LATEST-DEALS*/
+  .latest-deals > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  
+  /*TOP-NAV*/
+  .top-nav {
+    grid-template-columns: none;
+  }
+  .top-nav .logo {
+    display: none;
+  }
+
+  /*COVER*/
+  .cover {
+    grid-template-rows: 330px 330px;
+  }
+
+  /*LATEST-NEWS*/
+  .latest-news ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /*INDEX-CO*/
+  .index-co header {
+    display: flex;
+  }
+  .index-co > header ul {
+    display: inline;
+    margin-left: auto;
+  }
+  .index-co > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .index-co .article:last-child {
+    display: block;
+  }
+
+  /*CATEGORIES*/
+  .categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*LATEST-DEALS*/
+  .latest-deals > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+
+  /*TOP-NAV*/
+  .top-nav .countdown {
+    display: block;
+  }
 }
