@@ -8,7 +8,10 @@
     section .categories
     section .latest-deals
     footer
-*/
+*/  /* TODO
+flexible height for images (latest-news)
+make topnav-bar dissapear
+fonts!
 
 /* MAIN */
 
@@ -19,8 +22,14 @@ body {
   color: #555;
 }
 h1 {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
+  color: #f42;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h1 > a:hover {
+  color: #222;
 }
 a {
   text-decoration: none;
@@ -276,9 +285,6 @@ b {
 
 /* LATEST-NEWS */
 
-.latest-news {
-  background-color: rgb(217, 255, 217);
-}
 .latest-news ul {
   display: grid;
   grid-gap: 16px;
@@ -287,21 +293,29 @@ b {
 .latest-news li {
   background-color: #fff;
   display: grid;
-  grid-gap: 16px;
+  grid-template-columns: 75px 1fr;
+  grid-gap: 10px
 }
-
-/*
- <section class="latest-news">
-  <h1>Latest news &#8250;</h1>
-
-  <ul>
-    <li>article content</li><!--8 times-->
-    <li>article content</li>
-    <li>article content</li>
-    <li>article content</li>
-    <li>article content</li>
-  </ul>
-</section>
+.latest-news img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.latest-news .article h4 {
+  font-weight: bold;
+  margin: 4px 0 6px 0;
+}
+.latest-news .article h4 > a:hover {
+  color: #f42;
+  text-decoration: underline;
+}
+.latest-news .article p {
+  color: #bbb;
+  font-size: 13px;
+}
+.latest-news .article p > a:hover {
+  color: #555;
+}
 
 /* INDEX-CO */
 
@@ -471,6 +485,14 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
   }
+  .latest-news .article {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto 1fr;
+  }
+  .latest-news img {
+    width: 100%;
+    height: 130px;
+  }
 
   /*INDEX-CO*/
   .index-co > header li {
@@ -515,6 +537,9 @@ footer {
   /*LATEST-NEWS*/
   .latest-news ul {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .latest-news .article h4 {
+    font-size: 1.2em;
   }
 
   /*INDEX-CO*/
