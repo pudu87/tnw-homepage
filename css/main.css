@@ -13,7 +13,6 @@
 /* MAIN */
 
 body {
-  background-color: rgb(228, 255, 246);
   box-sizing: border-box;
   font-family: Maquette,Helvetica Neue,Arial,sans-serif;
   font-size: 14px;
@@ -31,7 +30,10 @@ a {
   max-width: 1192px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: aliceblue;
+  overflow-x: hidden;
+}
+b {
+  font-weight: bold;
 }
 
 /* TOP-NAV */
@@ -130,10 +132,6 @@ a {
 }
 .nav-2 .countdown > li:first-child {
   font-size: 20px;
-  font-weight: bold;
-}
-.nav-2 .countdown > li:first-child span {
-  font-weight: normal;
 }
 .nav-2 .countdown a {
   color: #f42;
@@ -171,7 +169,6 @@ a {
 /* COVER */
 
 .cover {
-  background-color: rgb(211, 211, 255);
   margin: 8px;
   padding-top: 104px;
   display: grid;
@@ -234,10 +231,47 @@ a {
 /* BANNER TNW-2020 */
 
 .tnw-2020 {
-  background-color: rgb(255, 237, 203);
+  background: linear-gradient(to right bottom, rgb(105, 105, 190), rgb(165, 89, 89));
   height: 90px;
-  max-width: 728px;
+  width: 728px;
+  overflow-x: hidden;
   margin: 0 auto;
+  display: grid;
+  grid-template: 50% 50% / 30% 40% 30%;
+  grid-template-areas: "logo daycount .       "
+                       "date daycount be-there";
+  align-items: center;
+}
+.tnw-2020 > p {
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tnw-2020 .logo {
+  grid-area: logo;
+  padding-top: 10px;
+  font-size: 30px;
+}
+.tnw-2020 .date {
+  grid-area: date;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.tnw-2020 .daycount {
+  grid-area: daycount;
+  text-align: center;
+  font-size: 50px;
+}
+.tnw-2020 .daycount strong {
+  font-size: 80px;
+}
+.tnw-2020 > p:last-child {
+  grid-area: be-there;
+  color: #0cc;
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  padding-bottom: 10px;
 }
 
 /* LATEST-NEWS */
