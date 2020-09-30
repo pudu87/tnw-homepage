@@ -38,6 +38,7 @@ a {
 
 .top-nav {
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
   height: 110px;
@@ -174,27 +175,61 @@ a {
   margin: 8px;
   padding-top: 104px;
   display: grid;
-  grid-auto-rows: 217px;
+  grid-auto-rows: 215px;
   grid-gap: 8px;
 }
 .cover > article {
-  background-color: white;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
-
-/*
-<section class="cover">
-  <article>
-    a cover article
-  </article>
-
-  <article>
-    a cover article
-  </article>
-
-  <article>
-    a cover article
-  </article>
-</section>
+.cover > article:first-child {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/robot.png");
+}
+.cover > article:nth-child(2) {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/kid.jpg");
+}
+.cover > article:last-child {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/phone-coins.png");
+}
+.cover header {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+.cover h2,
+.cover h3 {
+  color: #fff;
+}
+.cover h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px 0;
+}
+.cover h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cover li {
+  display: inline;
+  margin-right: 15px;
+  color: #aaa;
+}
+.cover li > a:hover {
+  color: #fff;
+}
+.cover div {
+  display: none;
+  margin: 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+}
+.cover div span {
+  font-weight: bold;
+  font-size: 120px;
+}
 
 /* BANNER TNW-2020 */
 
@@ -385,10 +420,16 @@ footer {
 
   /*COVER*/
   .cover {
-    grid-template: 280px 280px / 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
   .cover > article:first-child {
     grid-row: span 2;
+  }
+  .cover > article:first-child h2 {
+    font-size: 35px;
+  }
+  .cover > article {
+    background-size: cover;
   }
 
   /*LATEST-NEWS*/
@@ -431,7 +472,10 @@ footer {
 
   /*COVER*/
   .cover {
-    grid-template-rows: 330px 330px;
+    grid-template-rows: 270px 270px;
+  }
+  .cover div {
+    display: flex;
   }
 
   /*LATEST-NEWS*/
