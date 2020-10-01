@@ -9,9 +9,10 @@
     section .latest-deals
     footer
 */  /* TODO
-flexible height for images (latest-news)
+flexible height for images (latest-news + categories)
 make topnav-bar dissapear
 fonts!
+margins between sections
 
 /* MAIN */
 
@@ -398,85 +399,94 @@ b {
   display: none;
 }
 
-
-/*
-<section class="index-co">
-  <header>
-    <h1><a href="link.html">Latest funding rounds on Index.co &#8250;</a></h1>
-    <ul>
-      <li><a href="link.html">See more</a><span> | </span></li>
-      <li><a href="link.html">Get updates by email</a><span> | </span></li>
-      <li><a href="link.html">Add Info</a></li>
-    </ul>
-  </header>
-
-  <ul>
-    <li class="article">
-      <img src="/images/pynk.png" alt="pynk-logo">
-      <h4><a href="link.html">pynk.io</a></h4>
-      <div class="money">
-        <p>$2M</p>
-        <p>Seed Fund</p>
-      </div>
-      <div class="investment">
-        <p><a href="link.html">Machine Learning, +3</a></p>
-        <p><a href="link.html">Founders Institure, +2</a></p>
-      </div>
-      <p>Stock-prediction start-up Pynk raises $2m <em>on SiliconRepublic</em> </p>
-    </li><!--3/4 times-->
-    <li class="article">article content</li>
-    <li class="article">article content</li>
-    <li class="article">article content</li>
-  </ul>
-</section>
-
 /* CATEGORIES */
 
 .categories {
-  background-color: rgb(231, 255, 206);
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 20px;
 }
 .categories > section {
   background-color: #fff;
 }
-
-/*
-<div class="categories">
-  <section class="hard-fork"><!--9 times-->
-    <h1>Hard Fork &#8250;</h1>
-    <article>
-      article content
-    </article>
-    <div class="latest">
-      some article
-    </div>
-    <ul>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-    </ul>
-  </section>
-
-  <section class="apps">
-    <h1>Apps &#8250;</h1>
-    <article>
-      article content
-    </article>
-    <div class="latest">
-      some article
-    </div>
-    <ul>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-      <li><a href="link.html">other article</a></li>
-    </ul>
-  </section>
-</div>
+.categories article {
+  height: 200px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin-bottom: 2px;
+}
+.categories > section:nth-child(odd) article {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/bitcoin.jpg"); 
+}
+.categories > section:nth-child(even) article {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/apps.png"); 
+}
+.categories article > header {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  line-height: 1.2;
+}
+.categories article p:first-child {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.categories article h2 {
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.categories article h2 a:hover {
+  text-decoration: underline;
+  text-decoration-color: #999;
+  text-decoration-thickness: 1px;
+}
+.categories article p:last-child {
+  font-size: 10px;
+  color: #ccc;
+}
+.categories article p:last-child a:hover {
+  color: #fff;
+}
+.categories .latest {
+  background-color: rgba(255,68,34,.08);
+  height: 96px;
+  color: #f42;
+  padding-left: 10px;
+}
+.categories .latest img {
+  float: right;
+  height: 100%;
+  width: 96px;
+  object-fit: cover;
+}
+.categories .latest p {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.categories .latest h3 {
+  font-weight: bold;
+}
+.categories .latest h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.categories ul {
+  list-style-type: disc;
+  padding-left: 10px;
+}
+.categories li {
+  padding: 10px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+.categories li a:hover {
+  color: #000;
+}
 
 /* LATEST-DEALS */
 
