@@ -12,7 +12,6 @@
 flexible height for images (latest-news + categories)
 make topnav-bar dissapear
 fonts!
-margins between sections
 implement tnw logo
 
 /* MAIN */
@@ -69,10 +68,8 @@ b {
   justify-content: center;
   align-items: center;
 }
-.top-nav .logo span{
-  font-size: 25px;
-  font-weight: bold;
-  color: #fff;
+.top-nav img {
+  height: 16px;
 }
 .nav-1 {
   align-items: center;
@@ -237,9 +234,8 @@ b {
   align-items: flex-start;
   color: #fff;
 }
-.cover div span {
-  font-weight: bold;
-  font-size: 120px;
+.cover div img {
+  height: 90px;
 }
 
 /* BANNER TNW-2020 */
@@ -255,6 +251,9 @@ b {
   grid-template-areas: "logo daycount .       "
                        "date daycount be-there";
   align-items: center;
+}
+.tnw-2020 img {
+  height: 20px;
 }
 .tnw-2020 > p {
   color: white;
