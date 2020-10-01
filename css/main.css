@@ -319,15 +319,80 @@ b {
 
 /* INDEX-CO */
 
-.index-co {
-  background-color: rgb(255, 208, 208);
+.index-co > header {
+  margin-bottom: 20px;
+}
+.index-co > header li {
+  color: #f42;
+  margin-top: 12px;
+}
+.index-co > header li:first-child {
+  color: #f42;
+  margin-top: 0;
+}
+.index-co > header li a:hover {
+  color: #222;
+}
+.index-co > header li span {
+  display: none;
 }
 .index-co > ul {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 20px;
 }
 .index-co .article {
-  background-color: #fff;
+  background-color: #fffaf8;
+  position: relative;
+}
+.index-co .article img {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.index-co .article h4 {
+  background-color: #f42;
+  padding: 12px 80px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+.index-co .article .money {
+  background-color: rgba(255,68,34,.08);
+  padding: 12px 80px;
+}
+.index-co .article .money p:first-child {
+  font-size: 18px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+.index-co .article .money p:last-child {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #777;
+}
+.index-co .article .investment {
+  padding: 12px 10px;
+}
+.index-co .article .investment p {
+  font-size: 13px;
+  line-height: 2;
+}
+.index-co .article .investment a {
+  padding-left: 8px;
+}
+.index-co .article .investment a:hover {
+  color: #000;
+}
+.index-co .article > p {
+  padding: 12px 10px;
+  font-size: 12px;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255,68,34,.25);
+}
+.index-co .article > p em {
+  color: #aaa;
 }
 .index-co .article:last-child {
   display: none;
@@ -337,19 +402,31 @@ b {
 /*
 <section class="index-co">
   <header>
-    <h1>Latest funding rounds on Index.co &#8250;</h1>
+    <h1><a href="link.html">Latest funding rounds on Index.co &#8250;</a></h1>
     <ul>
-      <li><a href="link.html">See more</a></li>
-      <li><a href="link.html">Get updates by email</a></li>
+      <li><a href="link.html">See more</a><span> | </span></li>
+      <li><a href="link.html">Get updates by email</a><span> | </span></li>
       <li><a href="link.html">Add Info</a></li>
     </ul>
   </header>
 
   <ul>
-    <li>article content</li><!--3/4 times-->
-    <li>article content</li>
-    <li>article content</li>
-    <li>article content</li>
+    <li class="article">
+      <img src="/images/pynk.png" alt="pynk-logo">
+      <h4><a href="link.html">pynk.io</a></h4>
+      <div class="money">
+        <p>$2M</p>
+        <p>Seed Fund</p>
+      </div>
+      <div class="investment">
+        <p><a href="link.html">Machine Learning, +3</a></p>
+        <p><a href="link.html">Founders Institure, +2</a></p>
+      </div>
+      <p>Stock-prediction start-up Pynk raises $2m <em>on SiliconRepublic</em> </p>
+    </li><!--3/4 times-->
+    <li class="article">article content</li>
+    <li class="article">article content</li>
+    <li class="article">article content</li>
   </ul>
 </section>
 
@@ -497,6 +574,11 @@ footer {
   /*INDEX-CO*/
   .index-co > header li {
     display: inline;
+    font-size: 16px;
+  }
+  .index-co > header li span {
+    display: inline;
+    padding: 0 5px;
   }
   .index-co > ul {
     grid-template-columns: repeat(3, 1fr);
@@ -545,9 +627,10 @@ footer {
   /*INDEX-CO*/
   .index-co header {
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
   .index-co > header ul {
-    display: inline;
     margin-left: auto;
   }
   .index-co > ul {
