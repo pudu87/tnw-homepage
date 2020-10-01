@@ -13,6 +13,7 @@ flexible height for images (latest-news + categories)
 make topnav-bar dissapear
 fonts!
 margins between sections
+implement tnw logo
 
 /* MAIN */
 
@@ -530,62 +531,92 @@ b {
   font-size: 12px;
   text-decoration: line-through;
 }
-/*
-<section class="latest-deals">
-  <header>
-    <h1>Latest deals &#8250;</h1>
-    <div>See all deals</div>
-  </header>
-
-  <ul>
-    <li class="article">
-      <img src="/images/google-cloud.jpg" alt="google-cloud">
-      <div>
-        <h4><a href="link.html">The Google Cloud Certifications Practice Tests + Courses Bundle</a></h4>
-        <p><span>$639</span> $29.99</p>
-      </div>
-    </li>
-  </ul>
-</section>
-
-.latest-news ul {
-  display: grid;
-  grid-gap: 16px;
-  grid-auto-rows: 75px;
-}
-.latest-news li {
-  background-color: #fff;
-  display: grid;
-  grid-template-columns: 75px 1fr;
-  grid-gap: 10px
-}
-.latest-news img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-.latest-news .article h4 {
-  font-weight: bold;
-  margin: 4px 0 6px 0;
-}
-.latest-news .article h4 > a:hover {
-  color: #f42;
-  text-decoration: underline;
-}
-.latest-news .article p {
-  color: #bbb;
-  font-size: 13px;
-}
-.latest-news .article p > a:hover {
-  color: #555;
-}
 
 /* FOOTER */
 
 footer {
-  background-color: rgb(231, 205, 255);
+  text-align: center;
+  color: #ccc;
 }
+.bottom-nav {
+  background-color: #131313;
+  padding: 30px 0;
+}
+.bottom-nav .social-media {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+.bottom-nav .social-media li {
+  display: flex;
+  margin: 0 10px;
+}
+.bottom-nav .social-media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 50% 50%;
+  background-color: #333;
+}
+.bottom-nav .social-media a:hover {
+  background-color: #000;
+}
+.bottom-nav .social-media span {
+  font-size: 25px;
+  display: block;
+}
+.bottom-nav .links li {
+  display: inline;
+  padding: 0 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.bottom-nav li a:hover {
+  color: #fff;
+}
+footer div {
+  background-color: #000;
+  padding: 25px 0;
+}
+footer div img {
+  height: 8px;
+}
+footer div span {
+  display: block;
+  line-height: 1.5;
+  font-size: 12px;
+}
+/*
+<footer>
+  <nav class="bottom-nav">
+    <ul class="social-media">
+      <li><a href="link.html">A</a></li>
+      <li><a href="link.html">B</a></li>
+      <li><a href="link.html">C</a></li>
+      <li><a href="link.html">D</a></li>
+      <li><a href="link.html">E</a></li>
+      <li><a href="link.html">F</a></li>
+      <li><a href="link.html">G</a></li>
+    </ul>
 
+    <ul class="links">
+      <li><a href="link.html">Events</a></li>
+      <li><a href="link.html">About</a></li>
+      <li><a href="link.html">Advertise</a></li>
+      <li><a href="link.html">Jobs</a></li>
+      <li><a href="link.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <span><img src="/images/tnw-logo.png" alt="tnw-logo"></span>
+    © 2006–2020 The Next Web B.V. Made with &lt;3 in Amsterdam. Powered by
+    <span><img src="/images/stackpath-logo.png" alt="stackpath-logo"></span>
+  </div>
+</footer>
 
 /* MEDIA-QUERIES */
 
@@ -670,6 +701,11 @@ footer {
   .latest-deals img {
     width: 100%;
     height: 130px;
+  }
+  
+  /*FOOTER*/
+  footer > div span {
+    display: inline;
   }
 }
 
