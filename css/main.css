@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
   font-family: Maquette,Helvetica Neue,Arial,sans-serif;
   font-size: 14px;
-  color: #555;
+  color: #333;
 }
 h1 {
   font-size: 25px;
@@ -40,7 +40,7 @@ a {
   max-width: 1192px;
   margin: 0 auto;
   padding: 0 20px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 b {
   font-weight: bold;
@@ -490,20 +490,45 @@ b {
 
 /* LATEST-DEALS */
 
-.latest-deals {
-  background-color: rgb(255, 204, 204);
-}
 .latest-deals header {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  color: #f42;
+}
+.latest-deals header > div a:hover {
+  color: #000;
 }
 .latest-deals > ul {
   display: grid;
   grid-gap: 16px;
   grid-auto-rows: 75px;
 }
-.latest-deals .article {
-  background-color: #fff;
+.latest-deals li {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-gap: 10px;
+}
+.latest-deals img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.latest-deals .article h4 {
+  font-weight: bold;
+  margin: 4px 0 6px 0;
+}
+.latest-deals .article h4 > a:hover {
+  color: #f42;
+  text-decoration: underline;
+}
+.latest-deals .article p {
+  font-size: 14px;
+}
+.latest-deals .article p span {
+  color: #bbb;
+  font-size: 12px;
+  text-decoration: line-through;
 }
 /*
 <section class="latest-deals">
@@ -513,13 +538,47 @@ b {
   </header>
 
   <ul>
-    <li class="article">some article</li><!--8 times-->
-    <li class="article">some article</li>
-    <li class="article">some article</li>
-    <li class="article">some article</li>
-    <li class="article">some article</li>
+    <li class="article">
+      <img src="/images/google-cloud.jpg" alt="google-cloud">
+      <div>
+        <h4><a href="link.html">The Google Cloud Certifications Practice Tests + Courses Bundle</a></h4>
+        <p><span>$639</span> $29.99</p>
+      </div>
+    </li>
   </ul>
 </section>
+
+.latest-news ul {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-rows: 75px;
+}
+.latest-news li {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-gap: 10px
+}
+.latest-news img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.latest-news .article h4 {
+  font-weight: bold;
+  margin: 4px 0 6px 0;
+}
+.latest-news .article h4 > a:hover {
+  color: #f42;
+  text-decoration: underline;
+}
+.latest-news .article p {
+  color: #bbb;
+  font-size: 13px;
+}
+.latest-news .article p > a:hover {
+  color: #555;
+}
 
 /* FOOTER */
 
@@ -602,6 +661,15 @@ footer {
   /*LATEST-DEALS*/
   .latest-deals > ul {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+  .latest-deals .article {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto 1fr;
+  }
+  .latest-deals img {
+    width: 100%;
+    height: 130px;
   }
 }
 
@@ -656,8 +724,11 @@ footer {
   }
 
   /*LATEST-DEALS*/
-  .latest-deals > ul {
+  .latest-deals ul {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .latest-deals .article h4 {
+    font-size: 1.2em;
   }
 }
 
