@@ -43,6 +43,9 @@ a {
   padding: 0 20px;
   overflow: hidden;
 }
+.wrapper > * {
+  margin: 40px 0;
+}
 b {
   font-weight: bold;
 }
@@ -246,7 +249,7 @@ b {
   height: 90px;
   width: 728px;
   overflow-x: hidden;
-  margin: 0 auto;
+  margin: 40px auto;
   display: grid;
   grid-template: 50% 50% / 30% 40% 30%;
   grid-template-areas: "logo daycount .       "
@@ -589,34 +592,6 @@ footer div span {
   line-height: 1.5;
   font-size: 12px;
 }
-/*
-<footer>
-  <nav class="bottom-nav">
-    <ul class="social-media">
-      <li><a href="link.html">A</a></li>
-      <li><a href="link.html">B</a></li>
-      <li><a href="link.html">C</a></li>
-      <li><a href="link.html">D</a></li>
-      <li><a href="link.html">E</a></li>
-      <li><a href="link.html">F</a></li>
-      <li><a href="link.html">G</a></li>
-    </ul>
-
-    <ul class="links">
-      <li><a href="link.html">Events</a></li>
-      <li><a href="link.html">About</a></li>
-      <li><a href="link.html">Advertise</a></li>
-      <li><a href="link.html">Jobs</a></li>
-      <li><a href="link.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div>
-    <span><img src="/images/tnw-logo.png" alt="tnw-logo"></span>
-    © 2006–2020 The Next Web B.V. Made with &lt;3 in Amsterdam. Powered by
-    <span><img src="/images/stackpath-logo.png" alt="stackpath-logo"></span>
-  </div>
-</footer>
 
 /* MEDIA-QUERIES */
 
