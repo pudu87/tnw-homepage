@@ -188,13 +188,13 @@ b {
   background-position: center;
 }
 .cover > article:first-child {
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/robot.png");
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("images/robot.png");
 }
 .cover > article:nth-child(2) {
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/kid.jpg");
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("images/kid.jpg");
 }
 .cover > article:last-child {
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/phone-coins.png");
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("images/phone-coins.png");
 }
 .cover header {
   position: absolute;
@@ -421,10 +421,10 @@ b {
   padding-top: 75%;
 }
 .categories > section:nth-child(odd) article {
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/bitcoin.jpg"); 
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("images/bitcoin.jpg"); 
 }
 .categories > section:nth-child(even) article {
-  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/apps.png"); 
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("images/apps.png"); 
 }
 .categories article > header {
   position: absolute;
