@@ -9,10 +9,8 @@
     section .latest-deals
     footer
 */  /* TODO
-flexible height for images (latest-news + categories)
 make topnav-bar dissapear
-fonts!
-implement tnw logo
+fonts
 
 /* MAIN */
 
@@ -412,12 +410,18 @@ b {
   background-color: #fff;
 }
 .categories article {
-  height: 200px;
   position: relative;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
   margin-bottom: 2px;
+  overflow: hidden;
+}
+.categories article:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 75%;
 }
 .categories > section:nth-child(odd) article {
   background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/images/bitcoin.jpg"); 
@@ -427,9 +431,18 @@ b {
 }
 .categories article > header {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  line-height: 1.2;
+}
+.categories .title {
+  position: absolute;
   bottom: 10px;
   left: 10px;
-  line-height: 1.2;
 }
 .categories article p:first-child {
   font-size: 12px;
@@ -640,9 +653,24 @@ footer div span {
     grid-template-columns: 1fr;
     grid-auto-rows: auto 1fr;
   }
-  .latest-news img {
+  .latest-news .img {
+    position: relative;
+    overflow: hidden;
+  }
+  .latest-news .img:before {
+    display: block;
+    content: "";
     width: 100%;
-    height: 130px;
+    padding-top: 56.25%;
+  }
+  .latest-news .article img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   /*INDEX-CO*/
@@ -672,9 +700,24 @@ footer div span {
     grid-template-columns: 1fr;
     grid-auto-rows: auto 1fr;
   }
-  .latest-deals img {
+  .latest-deals .img {
+    position: relative;
+    overflow: hidden;
+  }
+  .latest-deals .img:before {
+    display: block;
+    content: "";
     width: 100%;
-    height: 130px;
+    padding-top: 50%;
+  }
+  .latest-deals .article img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
   }
   
   /*FOOTER*/
