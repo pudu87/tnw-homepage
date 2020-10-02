@@ -8,9 +8,6 @@
     section .categories
     section .latest-deals
     footer
-*/  /* TODO
-make topnav-bar dissapear
-fonts
 
 /* MAIN */
 
@@ -612,6 +609,8 @@ footer div span {
   /*TOP-NAV*/
   .top-nav {
     grid-template-rows: 32px 48px;
+    position: sticky;
+    top: -32px;
   }
   .top-nav .logo {
     grid-row: span 2;
@@ -633,6 +632,7 @@ footer div span {
   /*COVER*/
   .cover {
     grid-template-columns: 2fr 1fr;
+    padding-top: 0px;
   }
   .cover > article:first-child {
     grid-row: span 2;
